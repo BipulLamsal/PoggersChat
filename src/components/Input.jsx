@@ -9,6 +9,7 @@ function Input() {
     setMessage({
       user: "Bipul Lamsal",
       message: e.target.value,
+      date:Date.now()
     });
   };
 

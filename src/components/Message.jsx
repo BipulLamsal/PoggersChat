@@ -15,10 +15,10 @@ function Message() {
       <MessageInfo></MessageInfo>
       <div className="p-4 bg-dark2 sm:w-5/6 text-nicewhite text-left rounded-md ">
         <div className="hidden sm:flex flex-col text-left">
-          <p className="text-darkwhite text-sm font-bold">Bipul Lamsal</p>
-          <p className="text-darkwhite text-sm">{ timeAgo.format(new Date() - msgElement.date)}</p>
+          <p className="text-darkwhite text-sm font-bold">{msgElement.user}</p>
+          <p className="text-darkwhite text-sm">{msgElement.createdAt}</p>
         </div>
-        {msgElement.message}
+        {msgElement.text}
         <MessageButton></MessageButton>
       </div>
     </div>

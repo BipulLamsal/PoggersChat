@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Messages from "./components/Messages";
 import Input from "./components/Input";
+
 export const AppMessagesContext = createContext([]);
 // //firebase
 // import { auth, googleProvider } from "./config/firebase";
@@ -33,6 +34,7 @@ function App() {
           <div className="container mx-auto">
             <Header></Header>
             <AppMessagesContext.Provider value={{ messages, setMessages }}>
+
               <Messages></Messages>
               <Input></Input>
             </AppMessagesContext.Provider>

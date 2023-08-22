@@ -11,8 +11,6 @@ export const AppMessagesContext = createContext([]);
 // import firebase from "firebase";
 // import {signInWithPopup, signOut } from 'firebase/auth';
 
-
-
 function App() {
   // const signInWithGoogle = async () =>
   // {
@@ -27,16 +25,16 @@ function App() {
 
   // }
 
-  const [messages,setMessages] = useState([]);
+  const [messages, setMessages] = useState([]);
   return (
     <>
       <main className="flex justify-center">
         <div className="bg-dark1 rounded w-full md:w-3/4 ">
           <div className="container mx-auto">
             <Header></Header>
-            <AppMessagesContext.Provider value={{messages,setMessages}}>
-            <Messages></Messages>
-            <Input></Input>
+            <AppMessagesContext.Provider value={{ messages, setMessages }}>
+              <Messages></Messages>
+              <Input></Input>
             </AppMessagesContext.Provider>
           </div>
         </div>

@@ -45,8 +45,8 @@ function Messages() {
         messages.map((msgElement) => {
           return (
             
-            <AppMessageEleContext.Provider value={{ msgElement }}>
-              <Message></Message>
+            <AppMessageEleContext.Provider value={{ msgElement }} key={msgElement.id}>
+              <Message ></Message>
             </AppMessageEleContext.Provider>
           );
         })

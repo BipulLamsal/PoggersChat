@@ -10,8 +10,6 @@ import { motion } from "framer-motion";
 
 function Message() {
   const { msgElement } = useContext(AppMessageEleContext);
-
-
   return (
     <motion.div
       initial={{ scale: 0.5, opacity: 0 }}
@@ -23,6 +21,7 @@ function Message() {
         damping: 20,
       }}
       // whileHover={{ scale: 1.01, rotate: 1, transition: { duration: 0.3 }}
+
     >
       <div className="flex sm:flex-row flex-col px-10 py-4 sm:gap-10 gap-2">
         <MessageInfo></MessageInfo>

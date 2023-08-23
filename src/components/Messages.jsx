@@ -40,10 +40,11 @@ function Messages() {
   },[messages])
 
   return (
-    <div className="w-full h-[70vh] overflow-y-auto">
+    <div className="w-full h-[70vh] overflow-y-auto overflow-x-hidden">
       {isAuth ? (
         messages.map((msgElement) => {
           return (
+            
             <AppMessageEleContext.Provider value={{ msgElement }}>
               <Message></Message>
             </AppMessageEleContext.Provider>

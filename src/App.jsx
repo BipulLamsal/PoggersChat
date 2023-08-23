@@ -34,7 +34,6 @@ function App() {
           <div className="container mx-auto">
             <Header></Header>
             <AppMessagesContext.Provider value={{ messages, setMessages }}>
-
               <Messages></Messages>
               <Input></Input>
             </AppMessagesContext.Provider>

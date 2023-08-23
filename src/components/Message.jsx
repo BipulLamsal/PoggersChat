@@ -16,7 +16,7 @@ function Message() {
       <div className="p-4 bg-dark2 sm:w-5/6 text-nicewhite text-left rounded-md ">
         <div className="hidden sm:flex flex-col text-left">
           <p className="text-darkwhite text-sm font-bold">{msgElement.user}</p>
-          <p className="text-darkwhite text-sm">{msgElement.createdAt}</p>
+          <p className="text-darkwhite text-sm"></p>
         </div>
         {msgElement.text}
         <MessageButton></MessageButton>
@@ -24,5 +24,4 @@ function Message() {
     </div>
   );
 }
-
 export default Message;

@@ -17,13 +17,14 @@ const cookies = new Cookies(); // new instance
 export const AppMessageEleContext = createContext({}); // element context for message element.
 
 
-
 function Messages() {
   const { messages, setMessages } = useContext(AppMessagesContext);
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
   //REFRENCE FOR THE MESSAGE COLLECTION IN FIRESTORE
   const messageRef = collection(db, "messages");
   const queryMessages = query(messageRef, orderBy("createdAt", "asc"));
+  //SCROLLREF
+  const bottomRef = useRef(null);
   useEffect(() => {
     onSnapshot(queryMessages, (snapshot) => {
       let newMessages = [];
@@ -34,9 +35,12 @@ function Messages() {
     });
   }, []);
 
+  useEffect(()=>{
+    bottomRef.current?.scrollIntoView({behavior: 'smooth'}); 
+  },[messages])
+
   return (
     <div className="w-full h-[70vh] overflow-y-auto">
-      {console.log(messages)}
       {isAuth ? (
         messages.map((msgElement) => {
           return (
@@ -48,6 +52,8 @@ function Messages() {
       ) : (
         <Auth setIsAuth={setIsAuth}></Auth>
       )}
+
+    <div ref={bottomRef}></div>
     </div>
   );
 }

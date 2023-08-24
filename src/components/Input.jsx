@@ -2,29 +2,28 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { AppMessagesContext } from "../App";
 import { useContext, useState } from "react";
 import { auth, db } from "../config/firebase";
-
+import sendIcon from "../assets/send_icon.png";
 
 function Input() {
   // const { messages, setMessages } = useContext(AppMessagesContext);
   const [message, setMessage] = useState("");
-  const messageRef = collection(db,"messages");
+  const messageRef = collection(db, "messages");
 
   const handleOnChange = (e) => {
     setMessage(e.target.value);
   };
 
-  const handleSendClick = async(e) => {
+  const handleSendClick = async (e) => {
     e.preventDefault();
-    if(message !== "")
-    {
-      await addDoc(messageRef,{
-        text : message,
+    if (message !== "") {
+      await addDoc(messageRef, {
+        text: message,
         createdAt: serverTimestamp(),
-        user:auth.currentUser.displayName,
-        rocket:0,
-        poo:0
-      })
-      setMessage("")
+        user: auth.currentUser.displayName,
+        rocket: 0,
+        poo: 0,
+      });
+      setMessage("");
     }
   };
 
@@ -36,14 +35,10 @@ function Input() {
           placeholder="Type your message..."
           className="w-full py-3 px-6 focus:outline-none rounded-full bg-dark2 text-white"
           value={message}
-          onChange={(e) => handleOnChange(e)
-          }
+          onChange={(e) => handleOnChange(e)}
         />
-        <button
-          type="submit"
-          className ="bg-darkpink hover:bg-darkpink text-white py-2 px-4 rounded-lg"
-        >
-          Send
+        <button type="submit">
+          <img src={appLogo} alt="Send logo" className=""></img>
         </button>
       </form>
     </div>

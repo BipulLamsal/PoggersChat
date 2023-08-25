@@ -1,5 +1,5 @@
 import Message from "./Message";
-import { AppMessagesContext } from "../App";
+import { AppMessagesContext, AuthUserContext } from "../App";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import Auth from "./Auth";
 import Cookies from "universal-cookie"; // for auth cookies
@@ -19,7 +19,7 @@ export const AppMessageEleContext = createContext({}); // element context for me
 
 function Messages() {
   const { messages, setMessages } = useContext(AppMessagesContext);
-  const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
+  const {isAuth,setIsAuth} = useContext(AuthUserContext);
   //REFRENCE FOR THE MESSAGE COLLECTION IN FIRESTORE
   const messageRef = collection(db, "messages");
   const queryMessages = query(messageRef, orderBy("createdAt", "asc"));
@@ -34,6 +34,7 @@ function Messages() {
       setMessages(newMessages);
     });
   }, []);
+
 
   useEffect(()=>{
     bottomRef.current?.scrollIntoView({behavior: 'smooth'}); 

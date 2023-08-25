@@ -16,8 +16,6 @@ function Auth({setIsAuth}) {
       {
         console.log(error);
       }
-
-   
     }
 
   return (

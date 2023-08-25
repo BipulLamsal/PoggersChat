@@ -38,7 +38,7 @@ function Input() {
           onChange={(e) => handleOnChange(e)}
         />
         <button type="submit">
-          <img src={appLogo} alt="Send logo" className=""></img>
+          <img src={sendIcon} alt="Send logo" className=""></img>
         </button>
       </form>
     </div>

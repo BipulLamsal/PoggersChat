@@ -1,5 +1,4 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { AppMessagesContext } from "../App";
 import { useContext, useState } from "react";
 import { auth, db } from "../config/firebase";
 import sendIcon from "../assets/send_icon.png";

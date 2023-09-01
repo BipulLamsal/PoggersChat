@@ -20,7 +20,7 @@ function App() {
             <AuthUserContext.Provider value={{ isAuth, setIsAuth }}>
               <Header></Header>
               <Messages></Messages>
-              <Input></Input>
+              {isAuth && <Input></Input>}
             </AuthUserContext.Provider>
           </div>
         </div>

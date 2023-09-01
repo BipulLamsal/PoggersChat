@@ -19,7 +19,7 @@ function Auth({setIsAuth}) {
     }
 
   return (
-    <div className="w-full flex justify-center items-center mt-10">
+    <div className="w-full h-full flex justify-center items-center">
       <div class="bg-dark2 p-8 rounded shadow-md w-96">
         <h1 class="text-2xl font-semibold mb-4 text-nicewhite">Login</h1>
         <button
